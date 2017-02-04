@@ -17,5 +17,7 @@ The visualizer will read the contents of `output_file.flow` and reconstruct the 
 FlowchartParser is currently an alpha release. This means that there are likely many bugs; if you notice one, please submit an issue to this repository with a replicable level of detail. The following are some features to look for in future releases:
 
   * Support for syntax other than python
+  * Support for more complex python syntax (function definitions, etc.)
   * A graphics frontend for the visualizer instead of a text-based walkthrough
+  * Reverser (parse flowchart to generate code)
 
