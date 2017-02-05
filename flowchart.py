@@ -68,7 +68,7 @@ def get_handle(code):
                 print("body: %s"% str(body))
                 body_flow = get_handle(body)
                 print("body flow: %s" % str(body_flow))
-                if code[1] == "else:":
+                if len(code)-1 and code[1] == "else:":
                     print("ELSE CLAUSE PRESENT")
                     else_body = list()
                     print(code)
