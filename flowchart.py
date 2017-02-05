@@ -86,6 +86,7 @@ def get_handle(code):
                     else_body_flow[-1].connect(blank)
                 else:
                     con_br.if_yes(body_flow[0])
+                    body_flow[-1].connect(blank)
                     con_br.if_no(blank)
                 print(nodes)
                 if len(nodes):
