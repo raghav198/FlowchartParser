@@ -43,4 +43,4 @@ class ConditionalNode(Node):
 
 class ConnectorNode(Node):
     def __init__(self):
-        Node.__init__(self, "->", None)
+        Node.__init__(self, "", None)
