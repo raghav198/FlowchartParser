@@ -1,13 +1,14 @@
 import pygame
 import pickle
+from sys import argv
 from node import *
 
 
 ## CONSTANTS ##
 SCREEN_SIZE = (800, 800)
 NODE_SIZE = (100, 30)
-NODE_VSPACE = 20
-NODE_HSPACE = 30
+NODE_VSPACE = 30
+NODE_HSPACE = 50
 
 NODE_COLOR = 0xffffff00
 LINE_COLOR = 0xffffff00
@@ -56,23 +57,12 @@ def draw(obj, screen, x, y):
     screen.blit(text, (x-NODEW//4,y-NODEH//4))
         
 
-
-start = StartNode()
-command = Node("finish task")
-ask = ConditionalNode("Maybe?")
-yeah = Node("said yes")
-nope = Node("said no")
-end = StopNode()
-start.connect(command)
-command.connect(ask)
-ask.if_yes(yeah)
-ask.if_no(nope)
-yeah.connect(end)
-nope.connect(end)
-
 drawn = dict()
 
-begin = pickle.load(open("code.flow", "rb"))
+if len(argv) < 2:
+    print("Usage: pythons %s [flowchart file]" % argv[0])
+    raise SystemExit()
+begin = pickle.load(open(argv[1], "rb"))
 
 
 assert pygame.init() == (6, 0)
